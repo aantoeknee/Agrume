@@ -37,9 +37,10 @@ struct WrapperAgrumeView: UIViewControllerRepresentable {
   private let startIndex: Int
   @Binding private var binding: Bool
 
-  public init(images: [UIImage], isPresenting: Binding<Bool>) {
+    public init(images: [UIImage], isPresenting: Binding<Bool>, startIndex: Int = 0) {
     self.images = images
     self._binding = isPresenting
+    self.startIndex = startIndex
   }
 
   public func makeUIViewController(context: UIViewControllerRepresentableContext<WrapperAgrumeView>) -> UIViewController {

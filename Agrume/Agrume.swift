@@ -650,7 +650,7 @@ extension Agrume: AgrumeCellDelegate {
         self.blurContainerView.alpha = 0
         self.overlayView?.alpha = 0
       },
-      completion: dismissCompletion
+      completion: nil
     )
   }
   

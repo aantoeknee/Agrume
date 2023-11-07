@@ -8,6 +8,7 @@ public final class Agrume: UIViewController {
 
   /// Tap behaviour, i.e. what happens when you tap outside of the image area
   public enum TapBehavior {
+    case none
     case dismissIfZoomedOut
     case dismissAlways
     case zoomOut

@@ -247,6 +247,8 @@ extension AgrumeCell: UIGestureRecognizerDelegate {
   @objc
   private func singleTap() {
     switch tapBehavior {
+    case .none:
+        break
     case .dismissIfZoomedOut:
       if notZoomed {
         dismiss()

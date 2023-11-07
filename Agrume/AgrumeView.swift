@@ -49,9 +49,7 @@ struct WrapperAgrumeView: UIViewControllerRepresentable {
     agrume.addSubviews()
     agrume.addOverlayView()
     agrume.willDismiss = {
-      withAnimation {
         binding = false
-      }
     }
     return agrume
   }

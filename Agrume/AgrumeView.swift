@@ -18,10 +18,11 @@ public struct AgrumeView: View {
     self.init(images: [image], isPresenting: isPresenting, startIndex: startIndex)
   }
 
-  public init(images: [UIImage], isPresenting: Binding<Bool>, startIndex: Int = 0) {
+    public init(images: [UIImage], isPresenting: Binding<Bool>, startIndex: Int = 0, willDismiss: (() -> Void)? = nil) {
     self.images = images
     self._binding = isPresenting
     self.startIndex = startIndex
+    self.willDismiss = willDismiss
   }
 
   public var body: some View {

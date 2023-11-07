@@ -45,6 +45,7 @@ struct WrapperAgrumeView: UIViewControllerRepresentable {
 
   public func makeUIViewController(context: UIViewControllerRepresentableContext<WrapperAgrumeView>) -> UIViewController {
     let agrume = Agrume(images: images, startIndex: self.startIndex)
+    agrume.tapBehavior = .zoomOut
     agrume.view.backgroundColor = .clear
     agrume.addSubviews()
     agrume.addOverlayView()

@@ -50,7 +50,7 @@ struct WrapperAgrumeView: UIViewControllerRepresentable {
   public func makeUIViewController(context: UIViewControllerRepresentableContext<WrapperAgrumeView>) -> UIViewController {
     let agrume = Agrume(images: images, startIndex: self.startIndex)
     agrume.tapBehavior = .none
-    agrume.view.backgroundColor = .clear
+    agrume.view.backgroundColor = .blue
     agrume.addSubviews()
     agrume.addOverlayView()
     agrume.willDismiss = {

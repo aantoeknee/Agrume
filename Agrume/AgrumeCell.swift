@@ -80,7 +80,7 @@ final class AgrumeCell: UICollectionViewCell {
         imageView.setGifImage(image)
       } else {
         imageView.image = image
-        if #available(iOS 16, *), enableLiveText, let image = image {
+        if #available(iOS 16, macCatalyst 17.0, *), enableLiveText, let image = image {
           analyzeImage(image)
         }
       }
@@ -507,9 +507,8 @@ extension AgrumeCell: UIScrollViewDelegate {
     }
   }
   
-  @available(iOS 16, *)
+  @available(iOS 16, macCatalyst 17.0, *)
   private func analyzeImage(_ image: UIImage) {
-    #if !targetEnvironment(macCatalyst)
     guard ImageAnalyzer.isSupported else {
       return
     }
@@ -529,11 +528,10 @@ extension AgrumeCell: UIScrollViewDelegate {
         print(error.localizedDescription)
       }
     }
-    #endif
   }
 }
 
-@available(iOS 16.0, *)
+@available(iOS 16.0, macCatalyst 17.0, *)
 extension AgrumeCell: ImageAnalysisInteractionDelegate {
   func presentingViewController(for interaction: ImageAnalysisInteraction) -> UIViewController? {
     delegate?.presentingController
